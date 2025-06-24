@@ -1,4 +1,4 @@
-import 'base_exception.dart';
+import '../base/base_exception.dart';
 
 class AppException extends BaseException {
   final int code;
