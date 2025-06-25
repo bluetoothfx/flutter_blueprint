@@ -33,11 +33,14 @@ dependencies:
 
   cupertino_icons: ^1.0.8
   get_it: ^8.0.3
-  bloc: ^9.0.0
+  flutter_bloc: ^9.1.1
   dio: ^5.8.0+1
   flutter_secure_storage: ^9.2.4
   go_router: ^15.2.4
   equatable: ^2.0.7
+  flutter_svg: ^2.0.17
+  flutter_gen: ^5.8.0
+  pretty_dio_logger: ^1.4.0
   internet_connection_checker: ^3.0.1
 
   # The following adds the Cupertino Icons font to your application.
@@ -64,6 +67,9 @@ flutter:
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
+  assets:
+    - assets/icons/
+    - assets/lanucher_icons/
 
   # To add assets to your application, add an assets section, like this:
   # assets:

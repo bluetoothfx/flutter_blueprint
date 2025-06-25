@@ -1,9 +1,9 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 
-import 'api_client.dart';
+import 'i_api_client.dart';
 
-class DioClient implements ApiClient {
+class DioClient implements IApiClient {
   final Dio _dio;
 
   DioClient({required Dio dio}) : _dio = dio;

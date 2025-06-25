@@ -17,7 +17,7 @@ final class Failure<S, E extends AppException> extends Result<S, E> {
 }
 
 extension ResultExtension<S, E extends AppException> on Result<S, E> {
-  T fold<T>(T Function(E error) onFailure, T Function(S value) onSuccess) {
+  T fold<T>(T Function(S value) onSuccess, T Function(E error) onFailure) {
     if (this is Success<S, E>) {
       return onSuccess((this as Success<S, E>).value);
     } else {
