@@ -4,7 +4,9 @@ import 'package:flutter_blueprint/src/core/di/dependency_container.dart';
 import 'package:flutter_blueprint/src/core/themes/material_configurations.dart';
 import 'package:flutter_blueprint/src/features/home/presentation/bloc/recipe_bloc.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  init();
   runApp(const MyApp());
 }
 

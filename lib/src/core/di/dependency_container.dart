@@ -5,6 +5,7 @@ import 'package:dio/io.dart';
 import 'package:flutter_blueprint/src/core/network/i_api_client.dart';
 import 'package:flutter_blueprint/src/core/network/dio_client.dart';
 import 'package:flutter_blueprint/src/features/home/data/repositories/recipe_repository_impl.dart';
+import 'package:flutter_blueprint/src/features/home/domain/repositories/i_recipe_repository.dart';
 import 'package:flutter_blueprint/src/features/home/presentation/bloc/recipe_bloc.dart';
 import 'package:get_it/get_it.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
@@ -15,7 +16,7 @@ Future<void> init() async {
   IApiClient apiClient = _initApiClient();
 
   // Repository
-  inject.registerLazySingleton(() => RecipeRepository(networkClient: apiClient));
+  inject.registerLazySingleton<IRecipeRepository>(() => RecipeRepository(networkClient: apiClient));
 
   // Bloc
   inject.registerLazySingleton(() => RecipeBloc(recipeRepository: inject()));
