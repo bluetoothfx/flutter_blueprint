@@ -18,7 +18,7 @@ class RecipeRepository implements IRecipeRepository {
       return Success(RecipeResponse.fromJson(response.data));
     } catch (ex) {
       final error = ErrorHandler.handle(ex);
-      return Failure(AppException(code: error.failure.code, message: error.failure.message));
+      return Failure(error.failure);
     }
   }
 }
