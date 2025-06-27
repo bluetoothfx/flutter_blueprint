@@ -17,6 +17,7 @@ import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 final inject = GetIt.instance;
 
 Future<void> init() async {
+
   //network
   inject.registerLazySingleton<INetworkConnectionStatus>(
     () => NetworkConnectionStatus(connectionChecker: InternetConnectionChecker.createInstance()),

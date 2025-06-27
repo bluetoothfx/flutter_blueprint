@@ -6,7 +6,7 @@ import 'package:flutter_blueprint/src/features/home/presentation/bloc/recipe_blo
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  init();
+  await init();
   runApp(const MyApp());
 }
 

@@ -5,6 +5,7 @@ import 'package:flutter_blueprint/src/features/home/data/models/recipe.dart';
 import 'package:flutter_blueprint/src/features/home/presentation/bloc/recipe_bloc.dart';
 import 'package:flutter_blueprint/src/features/home/presentation/bloc/recipe_event.dart';
 import 'package:flutter_blueprint/src/features/home/presentation/bloc/recipe_state.dart';
+import 'package:flutter_blueprint/src/features/home/presentation/widgets/recipe_item.dart';
 import 'package:flutter_svg/svg.dart';
 
 class HomePage extends StatefulWidget {
@@ -21,18 +22,7 @@ class _HomePageState extends State<HomePage> {
 
   @override
   void initState() {
-    //_initializeData();
-
-    // WidgetsBinding.instance.addPostFrameCallback((_) {
-    //   _showUpdateDialog();
-    // });
-
     super.initState();
-  }
-
-  Future<void> _initializeData() async {
-    //var authType = await inject.get<AuthConfigManager>().getAuthType();
-    //authServiceHandler = inject.get<AuthServiceBase>(instanceName: authType);
   }
 
   @override
@@ -82,14 +72,14 @@ class _HomePageState extends State<HomePage> {
               shrinkWrap: true,
               itemBuilder: (context, index) {
                 Recipe? recipe = state.recipeBaseResponse!.recipe?[index];
-                // return RecipeItem(
-                //   recipe: recipe,
-                //   onItemClick: () {
-                //     Navigator.of(context).push(MaterialPageRoute(
-                //       builder: (_) => RecipeDetailsPage(recipe: recipe),
-                //     ));
-                //   },
-                // );
+                return RecipeItem(
+                  recipe: recipe,
+                  onItemClick: () {
+                    /*Navigator.of(context).push(MaterialPageRoute(
+                      builder: (_) => RecipeDetailsPage(recipe: recipe),
+                    ));*/
+                  },
+                );
               },
             );
           } else if (state is RecipeError) {
