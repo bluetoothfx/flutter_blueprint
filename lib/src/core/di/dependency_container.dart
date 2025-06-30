@@ -13,6 +13,7 @@ import 'package:flutter_blueprint/src/features/home/presentation/bloc/recipe_blo
 import 'package:get_it/get_it.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
+import 'package:simple_storage/storage_barrel.dart';
 
 final inject = GetIt.instance;
 
@@ -33,6 +34,8 @@ Future<void> init() async {
   inject.registerLazySingleton(() => RecipeBloc(recipeRepository: inject()));
 
   // Storage
+  final storage = await StorageFactory.createSecureStorage();
+  inject.registerLazySingleton(() => storage);
 
   //Theme configuration
 }
