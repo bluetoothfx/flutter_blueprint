@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_blueprint/src/core/utils/context_extension.dart';
 import 'package:flutter_blueprint/src/features/home/data/models/recipe.dart';
 import 'package:flutter_blueprint/src/features/home/presentation/bloc/recipe_bloc.dart';
 import 'package:flutter_blueprint/src/features/home/presentation/bloc/recipe_event.dart';
 import 'package:flutter_blueprint/src/features/home/presentation/bloc/recipe_state.dart';
+import 'package:flutter_blueprint/src/features/home/presentation/screens/recipe_details_page.dart';
 import 'package:flutter_blueprint/src/features/home/presentation/widgets/recipe_item.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -29,7 +31,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        //backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+          backgroundColor: context.appColors.systemPrimary,
         title: const Align(alignment: Alignment.centerLeft, child: Text("Blueprint Template")),
         actions: [
           InkWell(
@@ -75,9 +77,9 @@ class _HomePageState extends State<HomePage> {
                 return RecipeItem(
                   recipe: recipe,
                   onItemClick: () {
-                    /*Navigator.of(context).push(MaterialPageRoute(
-                      builder: (_) => RecipeDetailsPage(recipe: recipe),
-                    ));*/
+                    Navigator.of(context).push(MaterialPageRoute(
+                      builder: (_) => RecipeDetailsPage(),
+                    ));
                   },
                 );
               },
