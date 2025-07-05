@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_blueprint/src/core/utils/context_extension.dart';
 import 'package:flutter_blueprint/src/features/home/data/models/recipe.dart';
 import 'package:flutter_blueprint/src/features/home/presentation/bloc/recipe_bloc.dart';
 import 'package:flutter_blueprint/src/features/home/presentation/bloc/recipe_event.dart';
 import 'package:flutter_blueprint/src/features/home/presentation/bloc/recipe_state.dart';
-import 'package:flutter_blueprint/src/features/home/presentation/screens/recipe_details_page.dart';
+import 'package:flutter_blueprint/src/features/home/presentation/screens/design_sample_page.dart';
 import 'package:flutter_blueprint/src/features/home/presentation/widgets/recipe_item.dart';
-import 'package:flutter_svg/svg.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -31,17 +29,21 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          backgroundColor: context.appColors.systemPrimary,
-        title: const Align(alignment: Alignment.centerLeft, child: Text("Blueprint Template")),
+        backgroundColor: context.appColors.systemPrimary,
+        title: const Align(
+          alignment: Alignment.centerLeft,
+          child: Text("Blueprint Template"),
+        ),
         actions: [
           InkWell(
             onTap: () {
-              //BlocProvider.of<PostBloc>(context).add(PostStartEvent());
-              // Navigator.of(context).push(MaterialPageRoute(
-              //   builder: (_) => const ThemeSelectionPage(),
-              // ));
+              Navigator.of(
+                context,
+              ).push(MaterialPageRoute(builder: (_) => DesignSamplePage()));
             },
-            child: Text(''), //SvgPicture.asset(Assets.icons.icThemeChange, height: 32, width: 32,)
+            child: Icon(
+              Icons.account_tree
+            ), //SvgPicture.asset(Assets.icons.icThemeChange, height: 32, width: 32,)
           ),
           InkWell(
             onTap: () async {
@@ -57,7 +59,9 @@ class _HomePageState extends State<HomePage> {
               //   ));
               // });
             },
-            child: Text(''), //SvgPicture.asset(Assets.icons.icLogout, height: 32, width: 32,)
+            child: Text(
+              '',
+            ), //SvgPicture.asset(Assets.icons.icLogout, height: 32, width: 32,)
           ),
           const SizedBox(width: 16),
         ],
@@ -77,9 +81,9 @@ class _HomePageState extends State<HomePage> {
                 return RecipeItem(
                   recipe: recipe,
                   onItemClick: () {
-                    Navigator.of(context).push(MaterialPageRoute(
-                      builder: (_) => RecipeDetailsPage(),
-                    ));
+                    // Navigator.of(context).push(MaterialPageRoute(
+                    //   builder: (_) => DesignSamplePage(),
+                    // ));
                   },
                 );
               },
