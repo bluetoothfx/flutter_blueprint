@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_blueprint/src/core/themes/components/app_switch_toogle.dart';
 import 'package:flutter_blueprint/src/core/themes/components/button_size.dart';
 import 'package:flutter_blueprint/src/core/themes/components/drop_down_widget.dart';
 import 'package:flutter_blueprint/src/core/themes/components/primary_button.dart';
@@ -16,6 +17,7 @@ class DesignSamplePage extends StatefulWidget {
 }
 
 class _DesignSamplePageState extends State<DesignSamplePage> {
+  bool isEnabled = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -85,11 +87,20 @@ class _DesignSamplePageState extends State<DesignSamplePage> {
               size: ButtonSize.sm,
             ),
             gapH8,
+            AppSwitchToggle(
+              label: "Enable Manual Entry",
+              value: isEnabled,
+              onChanged: (newValue) {
+                setState(() {
+                  isEnabled = newValue;
+                });
+              },
+            ),
+            gapH8,
             Expanded(
               child: DropDownWidget(
-                title: "Status",
+                title: "Select Gender",
                 items: [
-                  Item(id: 0, title: "Select Gender"),
                   Item(id: 1, title: "Male"),
                   Item(id: 2, title: "Female"),
                 ],
