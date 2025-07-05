@@ -262,17 +262,14 @@ class SecondaryButtonState extends State<SecondaryButton> {
                 ],
                 if (hasText) ...[
                   Flexible(
-                    child: Opacity(
-                      opacity: widget.isLoading ? 0.0 : 1.0,
-                      child: Text(
-                        widget.text!,
-                        overflow: TextOverflow.ellipsis,
-                        // Truncate if necessary
-                        maxLines: 1,
-                        softWrap: false,
-                        textAlign: TextAlign.center,
-                        style: TextStyle(color: context.appColors.systemBase),
-                      ),
+                    child: Text(
+                      widget.text!,
+                      overflow: TextOverflow.ellipsis,
+                      // Truncate if necessary
+                      maxLines: 1,
+                      softWrap: false,
+                      textAlign: TextAlign.center,
+                      style: TextStyle(color: context.appColors.systemBase),
                     ),
                   ),
                 ],
@@ -281,7 +278,11 @@ class SecondaryButtonState extends State<SecondaryButton> {
                     SizedBox(width: AppSpacingConstants.xxs),
                     SizedBox(width: AppSpacingConstants.xs),
                   ],
-                  SizedBox(width: 20.0, height: 20.0, child: widget.rightIcon),
+                  SizedBox(
+                    width: 20.0,
+                    height: 20.0,
+                    child: widget.rightIcon,
+                  )
                 ],
               ],
             ),

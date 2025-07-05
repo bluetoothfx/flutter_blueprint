@@ -280,7 +280,11 @@ class TertiaryButtonState extends State<TertiaryButton> {
                     SizedBox(width: AppSpacingConstants.xxs),
                     SizedBox(width: AppSpacingConstants.xs),
                   ],
-                  SizedBox(width: 20.0, height: 20.0),
+                  SizedBox(
+                    width: 20.0,
+                    height: 20.0,
+                    child: widget.rightIcon,
+                  )
                 ],
               ],
             ),

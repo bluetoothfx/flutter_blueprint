@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_blueprint/src/core/themes/components/button_size.dart';
+import 'package:flutter_blueprint/src/core/themes/components/drop_down_widget.dart';
 import 'package:flutter_blueprint/src/core/themes/components/primary_button.dart';
 import 'package:flutter_blueprint/src/core/themes/components/secondary_button.dart';
 import 'package:flutter_blueprint/src/core/themes/components/tertiary_button.dart';
@@ -43,7 +44,22 @@ class _RecipeDetailsPageState extends State<RecipeDetailsPage> {
             gapH8,
             TertiaryButton(context, text: "Tertiary Secondary Medium", size: ButtonSize.md),
             gapH8,
-            TertiaryButton(context, text: "Tertiary Secondary Small", size: ButtonSize.sm)
+            TertiaryButton(context, text: "Tertiary Secondary Small", size: ButtonSize.sm),
+            gapH8,
+            Expanded(
+              child: DropDownWidget(
+                title: "Status",
+                items: [
+                  Item(id: 0, title: "Select Gender"),
+                  Item(id: 1, title: "Male"),
+                  Item(id: 2, title: "Female"),
+                ],
+                selectedId: 0,
+                onSelected: (Item value) {
+
+                },
+              ),
+            ),
           ],
         ),
       ),

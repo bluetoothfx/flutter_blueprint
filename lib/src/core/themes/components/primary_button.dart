@@ -278,7 +278,11 @@ class PrimaryButtonState extends State<PrimaryButton> {
                     SizedBox(width: AppSpacingConstants.xxs),
                     SizedBox(width: AppSpacingConstants.xs),
                   ],
-                  SizedBox(width: 20.0, height: 20.0),
+                  SizedBox(
+                    width: 20.0,
+                    height: 20.0,
+                    child: widget.rightIcon,
+                  )
                 ],
               ],
             ),
