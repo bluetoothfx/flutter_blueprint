@@ -5,7 +5,7 @@ import 'package:flutter_blueprint/src/features/home/data/models/recipe.dart';
 
 class RecipeItem extends StatelessWidget {
   final Recipe? recipe;
-  Function onItemClick;
+  VoidCallback onItemClick;
 
   RecipeItem({super.key, required this.recipe, required this.onItemClick});
 

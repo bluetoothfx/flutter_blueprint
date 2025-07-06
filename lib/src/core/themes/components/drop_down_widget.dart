@@ -17,13 +17,6 @@ class Item extends Equatable{
   List<Object?> get props => [id, title];
 }
 
-extension ItemListExtentsion on List<Item> {
-  int? getIdByTitle(String title) {
-    int index = indexWhere((element) => element.title == title);
-    return index == -1 ? null : this[index].id;
-  }
-}
-
 class DropDownWidget extends StatefulWidget {
   final String title;
   final List<Item> items;

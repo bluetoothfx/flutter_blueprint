@@ -9,7 +9,7 @@ class SecondaryButton extends StatefulWidget {
   final ButtonSize size;
   final Widget? leftIcon;
   final Widget? rightIcon;
-  final VoidCallback? onPressed;
+  final VoidCallback onPressed;
   final VoidCallback? onLongPress;
   final ValueChanged<bool>? onHover;
   final ValueChanged<bool>? onFocusChange;
@@ -29,7 +29,7 @@ class SecondaryButton extends StatefulWidget {
     this.text,
     this.leftIcon,
     this.rightIcon,
-    this.onPressed,
+    required this.onPressed,
     this.onLongPress,
     this.onHover,
     this.onFocusChange,
@@ -49,7 +49,7 @@ class SecondaryButton extends StatefulWidget {
     String? text,
     Widget? leftIcon,
     Widget? rightIcon,
-    VoidCallback? onPressed,
+    required VoidCallback onPressed,
     VoidCallback? onLongPress,
     ValueChanged<bool>? onHover,
     ValueChanged<bool>? onFocusChange,
@@ -91,7 +91,7 @@ class SecondaryButton extends StatefulWidget {
     String? text,
     Widget? leftIcon,
     Widget? rightIcon,
-    VoidCallback? onPressed,
+    required VoidCallback onPressed,
     VoidCallback? onLongPress,
     ValueChanged<bool>? onHover,
     ValueChanged<bool>? onFocusChange,
@@ -132,7 +132,7 @@ class SecondaryButton extends StatefulWidget {
     String? text,
     Widget? leftIcon,
     Widget? rightIcon,
-    VoidCallback? onPressed,
+    required VoidCallback onPressed,
     VoidCallback? onLongPress,
     ValueChanged<bool>? onHover,
     ValueChanged<bool>? onFocusChange,
@@ -181,15 +181,6 @@ class SecondaryButtonState extends State<SecondaryButton> {
     double horizontalPadding;
     double buttonHeight;
 
-    VoidCallback? onPressed;
-    if (widget.trackingName != null && widget.onPressed != null) {
-      onPressed = () {
-        widget.onPressed!();
-      };
-    } else {
-      onPressed = widget.onPressed;
-    }
-
     switch (widget.size) {
       case ButtonSize.sm:
         buttonHeight = 36;
@@ -226,9 +217,7 @@ class SecondaryButtonState extends State<SecondaryButton> {
         decoration: BoxDecoration(borderRadius: BorderRadius.circular(16)),
         child: ElevatedButton(
           key: widget.key,
-          onPressed: () {
-            onPressed != null ? onPressed() : () {};
-          },
+          onPressed: widget.onPressed,
           onLongPress: widget.onLongPress,
           onHover: widget.onHover,
           style: ElevatedButton.styleFrom(

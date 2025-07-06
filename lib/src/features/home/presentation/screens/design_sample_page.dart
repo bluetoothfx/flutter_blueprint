@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_blueprint/src/core/themes/components/app_switch_toogle.dart';
+import 'package:flutter_blueprint/src/core/themes/components/app_switch_toggle.dart';
 import 'package:flutter_blueprint/src/core/themes/components/button_size.dart';
 import 'package:flutter_blueprint/src/core/themes/components/drop_down_widget.dart';
 import 'package:flutter_blueprint/src/core/themes/components/primary_button.dart';
@@ -18,6 +18,7 @@ class DesignSamplePage extends StatefulWidget {
 
 class _DesignSamplePageState extends State<DesignSamplePage> {
   bool isEnabled = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,54 +39,63 @@ class _DesignSamplePageState extends State<DesignSamplePage> {
               context,
               text: "Button Primary Large",
               size: ButtonSize.lg,
+              onPressed: () {},
             ),
             gapH8,
             PrimaryButton(
               context,
               text: "Button Primary Medium",
               size: ButtonSize.md,
+              onPressed: () {},
             ),
             gapH8,
             PrimaryButton(
               context,
               text: "Button Primary Small",
               size: ButtonSize.sm,
+              onPressed: () {},
             ),
             gapH8,
             SecondaryButton(
               context,
               text: "Button Secondary Large",
               size: ButtonSize.lg,
+              onPressed: () {},
             ),
             gapH8,
             SecondaryButton(
               context,
               text: "Button Secondary Medium",
               size: ButtonSize.md,
+              onPressed: () {},
             ),
             gapH8,
             SecondaryButton(
               context,
               text: "Button Secondary Small",
               size: ButtonSize.sm,
+              onPressed: () {},
             ),
             gapH8,
             TertiaryButton(
               context,
               text: "Tertiary Secondary Large",
               size: ButtonSize.lg,
+              onPressed: () {},
             ),
             gapH8,
             TertiaryButton(
               context,
               text: "Tertiary Secondary Medium",
               size: ButtonSize.md,
+              onPressed: () {},
             ),
             gapH8,
             TertiaryButton(
               context,
               text: "Tertiary Secondary Small",
               size: ButtonSize.sm,
+              onPressed: () {},
             ),
             gapH8,
             AppSwitchToggle(

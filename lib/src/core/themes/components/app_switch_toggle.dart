@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_blueprint/src/core/utils/context_extension.dart';
 
 class AppSwitchToggle extends StatelessWidget {
   final String label;
@@ -7,32 +8,28 @@ class AppSwitchToggle extends StatelessWidget {
   final bool isEnabled;
 
   const AppSwitchToggle({
-    Key? key,
+    super.key,
     required this.label,
     required this.value,
     required this.onChanged,
     this.isEnabled = true,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Expanded(
           child: Text(
             label,
-            style: theme.textTheme.bodyMedium?.copyWith(
-              color: isEnabled ? theme.colorScheme.onBackground : theme.disabledColor,
-            ),
+            style: context.textTheme.labelLarge,
           ),
         ),
         Switch(
           value: value,
           onChanged: isEnabled ? onChanged : null,
-          activeColor: theme.colorScheme.primary,
+          activeColor: context.appColors.systemPrimary,
         ),
       ],
     );
