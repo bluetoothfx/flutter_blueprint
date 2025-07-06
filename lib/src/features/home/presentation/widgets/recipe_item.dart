@@ -1,7 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_blueprint/src/core/utils/context_extension.dart';
 import 'package:flutter_blueprint/src/features/home/data/models/recipe.dart';
-
 
 class RecipeItem extends StatelessWidget {
   final Recipe? recipe;
@@ -19,7 +19,7 @@ class RecipeItem extends StatelessWidget {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(12),
         ),
-        color: Colors.white,
+        color: context.appColors.systemBase,
         elevation: .1,
         margin: const EdgeInsets.symmetric(vertical: 8, horizontal: 12),
         child: Padding(
@@ -55,26 +55,17 @@ class RecipeItem extends StatelessWidget {
                   children: [
                     Text(
                       recipe?.name ?? "",
-                      style: const TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold,
-                      ),
+                      style: context.textTheme.titleLarge,
                     ),
                     const SizedBox(height: 4),
                     Text(
                       "Cuisine: ${recipe?.cuisine ?? ""}",
-                      style: const TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold,
-                      ),
+                      style: context.textTheme.labelLarge,
                     ),
                     const SizedBox(height: 4),
                     Text(
                       "Difficulty: ${recipe?.difficulty ?? ""}",
-                      style: const TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold,
-                      ),
+                      style: context.textTheme.labelLarge,
                     ),
                     const SizedBox(height: 4),
                     Row(
@@ -83,7 +74,7 @@ class RecipeItem extends StatelessWidget {
                         const SizedBox(width: 4),
                         Text(
                           '${recipe?.reviewCount} reviews',
-                          style: const TextStyle(fontSize: 14),
+                          style: context.textTheme.labelSmall,
                         ),
                       ],
                     ),

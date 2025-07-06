@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
 
     return MultiBlocProvider(
       providers: [BlocProvider(create: (context) => inject<RecipeBloc>())],
-      child: MaterialConfiguration(themeMode: ThemeMode.light),
+      child: MaterialConfiguration(themeMode: ThemeMode.system),
     );
   }
 }

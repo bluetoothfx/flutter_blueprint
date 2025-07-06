@@ -29,7 +29,8 @@ class _DesignSamplePageState extends State<DesignSamplePage> {
         ),
       ),
       body: Container(
-        margin: const EdgeInsets.all(AppSpacingConstants.xl),
+        color: context.appColors.systemBase,
+        padding: const EdgeInsets.all(AppSpacingConstants.xl),
         child: ListView(
           children: [
             gapH8,
@@ -97,16 +98,14 @@ class _DesignSamplePageState extends State<DesignSamplePage> {
               },
             ),
             gapH8,
-            Expanded(
-              child: DropDownWidget(
-                title: "Select Gender",
-                items: [
-                  Item(id: 1, title: "Male"),
-                  Item(id: 2, title: "Female"),
-                ],
-                selectedId: 0,
-                onSelected: (Item value) {},
-              ),
+            DropDownWidget(
+              title: "Gender",
+              items: [
+                Item(id: 1, title: "Male"),
+                Item(id: 2, title: "Female"),
+              ],
+              selectedId: 0,
+              onSelected: (Item value) {},
             ),
             gapH8,
             Text("Display Large", style: context.textTheme.displayLarge),
