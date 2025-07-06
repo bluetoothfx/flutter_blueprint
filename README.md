@@ -1,6 +1,6 @@
 # Flutter Blueprint
 
-A new Flutter bootstraping project.
+A new Flutter bootstrapping project.
 
 ## Table of Contents
 
